@@ -107,8 +107,8 @@ nav {
                 
                 <input class="btn btn-success btn-block" type="submit" value="Add Question" style="color:white;"><br/>
                 
-                <c:if test="${tbl>=1}">
-                    <font size="5" color='green' style="text-align: center;">Question Added Successfully</font>
+                <c:if test="${not empty param.success}">
+                    <c:out value="${param.success}"></c:out>
                 </c:if>
             </form>
     </body>

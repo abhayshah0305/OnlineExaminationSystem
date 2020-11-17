@@ -28,7 +28,9 @@
                     <sql:param value="${param.answer}" />
                 </sql:update>
         <c:if test="${tbl>=1}">
-            <c:redirect url="addquestions.jsp"></c:redirect>
+            <c:redirect url="addquestions.jsp">
+                <c:param name="success" value="Question Inserted Successfully"/>
+            </c:redirect>
         </c:if>  
     </body>
 </html>
