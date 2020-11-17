@@ -94,11 +94,8 @@ nav {
             <jsp:include page="adminnavbar.jsp" /><br/>
             <h1 style="text-align: center;"><u>Add Questions</u></h1>
             <h5 style="text-align: center;">Add Questions to ${examsubject} Examination</h5><br/>
-            
-            <sql:setDataSource driver="com.mysql.jdbc.Driver" url="jdbc:mysql://localhost:3306/ejproj" 
-            user="root" password="root"></sql:setDataSource>
-            
-            <form class="form-signin" action="addquestions.jsp" method="POST">
+                        
+            <form class="form-signin" action="addquestionDB.jsp" method="POST">
                
                 <input type="text" class="form-control" placeholder="Question Number" required="" autofocus="" name="questno" />
                 <input type="text" class="form-control" placeholder="Question" required="" name="question" />
@@ -110,16 +107,6 @@ nav {
                 
                 <input class="btn btn-success btn-block" type="submit" value="Add Question" style="color:white;"><br/>
                 
-                <sql:update var="tbl">
-                    INSERT INTO ${examsubject}(qno,question,a1,a2,a3,a4,ans) VALUES (?,?,?,?,?,?,?)
-                    <sql:param value="${param.questno}" /> 
-                    <sql:param value="${param.question}" />
-                    <sql:param value="${param.ans1}" />
-                    <sql:param value="${param.ans2}" />
-                    <sql:param value="${param.ans3}" />
-                    <sql:param value="${param.ans4}" />
-                    <sql:param value="${param.answer}" />
-                </sql:update>
                 <c:if test="${tbl>=1}">
                     <font size="5" color='green' style="text-align: center;">Question Added Successfully</font>
                 </c:if>
