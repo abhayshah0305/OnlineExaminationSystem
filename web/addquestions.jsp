@@ -87,10 +87,8 @@ nav {
     
 }
     </style>
-
     </head>
     <body>
-        
             <jsp:include page="adminnavbar.jsp" /><br/>
             <h1 style="text-align: center;"><u>Add Questions</u></h1>
             <h5 style="text-align: center;">Add Questions to ${examsubject} Examination</h5><br/>
