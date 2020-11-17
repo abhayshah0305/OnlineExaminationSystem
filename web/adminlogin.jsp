@@ -74,14 +74,13 @@
     </head>
     <body>
         <div id="logreg-forms">
-        <form class="form-signin" action="login" method="POST">
+        <form class="form-signin" action="adminlogin" method="POST">
             <h1 class="h3 mb-3 font-weight-normal" style="text-align: center">Administrator Sign In</h1>
             <hr/>
             <input type="email" class="form-control" placeholder="Email" required="" autofocus="" name="email" />
             <input type="password" class="form-control" placeholder="Password" required="" name="pass" /><br>
             
             <input class="btn btn-success btn-block" type="submit" value="Login" style="color:white;"><br/>
-            <a href="register.jsp" id="forgot_pswd">Don't have an account? Sign Up</a><br/>
             <h5 style="color:red; text-align: center;">${err}</h5>
             <hr/>
         </form>
