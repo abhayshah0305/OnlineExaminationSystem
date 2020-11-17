@@ -83,7 +83,7 @@ public class login extends HttpServlet {
                         hs.setAttribute("id", id);
                         hs.setAttribute("name", name);
                         hs.setAttribute("email", emailid);
-                        RequestDispatcher rd = request.getRequestDispatcher("success.jsp");
+                        RequestDispatcher rd = request.getRequestDispatcher("examscreen.jsp");
                         rd.forward(request, response);
                     }
                     else{

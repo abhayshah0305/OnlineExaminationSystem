@@ -186,7 +186,6 @@
         </div>
     </div>
     </div>
-    <a href="test.jsp">Click</a>
     <!--Footer-->
     <jsp:include page="footer.jsp"/>
    </form>
