@@ -77,7 +77,7 @@ public class adminlogin extends HttpServlet {
                         HttpSession hs = request.getSession();
                         hs.setAttribute("id", id);
                         hs.setAttribute("email", emailid);
-                        RequestDispatcher rd = request.getRequestDispatcher("success.jsp");
+                        RequestDispatcher rd = request.getRequestDispatcher("adminhome.jsp");
                         rd.forward(request, response);
                     }
                     else{
