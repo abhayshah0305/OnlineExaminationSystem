@@ -42,37 +42,33 @@ nav {
 
   <div class="jumbotron">
     <div class="container">
-      <h1 class="display-4">About OES</h1>
+      <h1 class="display-4">Welcome Admin!</h1>
       <p>Welcome to OES!, an online examination system for colleges and universities to conduct their exams. OES provides
          ease and maximum efficiency thus saving the organization's valuable time.
       </p>
       <p>Please Select the Subject for Examination:
       </p>
       <p>
-       
         <select name="examsubject">
-            <option name="py" value="Advanced Python">Advanced Python</option>
-            <option name="ej" value="Enterprise Java">Enterprise Java</option>          
-            <option name="dbms" value="DBMS">DBMS</option>
-        </select>
-     
+            <option name="py" value="Python">Python</option>
+            <option name="ej" value="Django">Django</option>          
+        </select>        
       </p>
-      <input type="submit" value="Select Exam">
-      
+      <input type="submit" value="Select Exam"><br/><br/>
        <%
            String examtype = (String)request.getParameter("examsubject");
            session.setAttribute("examsubject", examtype);
        %>
+       <p>Examination Subject: <b>${examsubject}</b></p>
       </div>
     </div>
-  </div>
-
+  
   <div class="container">
 
     <div class="row">
       <div class="col-md-4">
         <h2>Admin</h2>
-        <p>OES provides Admin accounts which gives the user the privelage to create, manipulate or delete the exam</p>
+        <p>OES provides Admin accounts which gives the user the privilege to create, manipulate or delete the exam</p>
       </div>
       <div class="col-md-4">
         <h2>How does it Work?</h2>
@@ -91,7 +87,7 @@ nav {
 </main>
 
 <footer class="container">
-  <p>&copy; ttgs. All Rights Reserved</p>
+  <p>&copy; oes. All Rights Reserved</p>
 </footer>
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
       <script>window.jQuery || document.write('<script src="../assets/js/vendor/jquery.slim.min.js"><\/script>')</script><script src="../assets/dist/js/bootstrap.bundle.js"></script>
