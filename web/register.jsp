@@ -75,7 +75,7 @@
     <body>
         <div id="logreg-forms" >
         <form class="form-signin" action="register">
-            <h1 class="h3 mb-3 font-weight-normal" style="text-align: center">Sign Up</h1>
+            <h1 class="h3 mb-3 font-weight-normal" style="text-align: center">Student Sign Up</h1>
             <hr>
             <input type="text" id="inputEmail" class="form-control" placeholder="Name" required="" autofocus="" name="name" />
             <input type="email" id="inputEmail" class="form-control" placeholder="Email" required="" autofocus="" name="email" />

@@ -1,6 +1,6 @@
 <%-- 
-    Document   : login
-    Created on : 16 Nov, 2020, 1:45:40 AM
+    Document   : adminlogin
+    Created on : 17 Nov, 2020, 3:33:24 PM
     Author     : Abhay Shah
 --%>
 
@@ -75,7 +75,7 @@
     <body>
         <div id="logreg-forms">
         <form class="form-signin" action="login" method="POST">
-            <h1 class="h3 mb-3 font-weight-normal" style="text-align: center">Student Sign In</h1>
+            <h1 class="h3 mb-3 font-weight-normal" style="text-align: center">Administrator Sign In</h1>
             <hr/>
             <input type="email" class="form-control" placeholder="Email" required="" autofocus="" name="email" />
             <input type="password" class="form-control" placeholder="Password" required="" name="pass" /><br>
