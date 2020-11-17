@@ -30,7 +30,7 @@
 
             %>
             
-        <form action="answercheck" method="POST">
+        <form action="evaluate" method="POST">
             <br><b><span id="timer"></span></b>
             <center><h3>${selectedexam} Examination</h3></center> 
             <!--counter-->
