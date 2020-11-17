@@ -38,53 +38,48 @@ nav {
     <form action="adminhome.jsp" method="POST"> 
         <jsp:include page="adminnavbar.jsp" />
 
-         <main role="main">
-
-  <div class="jumbotron">
-    <div class="container">
-      <h1 class="display-4">Welcome Admin!</h1>
-      <p>Welcome to OES!, an online examination system for colleges and universities to conduct their exams. OES provides
-         ease and maximum efficiency thus saving the organization's valuable time.
-      </p>
-      <p>Please Select the Subject for Examination:
-      </p>
-      <p>
-        <select name="examsubject">
-            <option name="py" value="Python">Python</option>
-            <option name="ej" value="Django">Django</option>          
-        </select>        
-      </p>
-      <input type="submit" value="Select Exam"><br/><br/>
-       <%
-           String examtype = (String)request.getParameter("examsubject");
-           session.setAttribute("examsubject", examtype);
-       %>
-       <p>Examination Subject: <b>${examsubject}</b></p>
-      </div>
-    </div>
+        <main role="main">
+            <div class="jumbotron">
+              <div class="container">
+                <h1 class="display-4">Welcome Admin!</h1>
+                <p>Welcome to OES!, an online examination system for colleges and universities to conduct their exams. OES provides
+                   ease and maximum efficiency thus saving the organization's valuable time.
+                </p>
+                <p>Please Select the Subject for Examination:
+                </p>
+                <p>
+                  <select name="examsubject">
+                      <option name="py" value="Python">Python</option>
+                      <option name="ej" value="Django">Django</option>          
+                  </select>        
+                </p>
+                <input type="submit" value="Select Exam"><br/><br/>
+                 <%
+                     String examtype = (String)request.getParameter("examsubject");
+                     session.setAttribute("examsubject", examtype);
+                 %>
+                 <p>Examination Subject: <b>${examsubject}</b></p>
+                </div>
+                </div>
   
-  <div class="container">
-
-    <div class="row">
-      <div class="col-md-4">
-        <h2>Admin</h2>
-        <p>OES provides Admin accounts which gives the user the privilege to create, manipulate or delete the exam</p>
-      </div>
-      <div class="col-md-4">
-        <h2>How does it Work?</h2>
-        <p>OES makes use of JSP, Servlets, JSTL and a MySql database</p>
-      </div>
-      <div class="col-md-4">
-        <h2>Terms & Conditions</h2>
-        <p>If your organization has any concerns regarding the system please read our Terms and Conditions.</p>
-      </div>
-    </div>
-
-    <hr>
-
-  </div>
-
-</main>
+                <div class="container">
+                  <div class="row">
+                    <div class="col-md-4">
+                      <h2>Admin</h2>
+                      <p>OES provides Admin accounts which gives the user the privilege to create, manipulate or delete the exam</p>
+                    </div>
+                    <div class="col-md-4">
+                      <h2>How does it Work?</h2>
+                      <p>OES makes use of JSP, Servlets, JSTL and a MySql database</p>
+                    </div>
+                    <div class="col-md-4">
+                      <h2>Terms & Conditions</h2>
+                      <p>If your organization has any concerns regarding the system please read our Terms and Conditions.</p>
+                    </div>
+                </div>
+                <hr>
+            </div>
+        </main>
 
 <footer class="container">
   <p>&copy; oes. All Rights Reserved</p>

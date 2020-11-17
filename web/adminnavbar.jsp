@@ -21,7 +21,7 @@
                     <li class="nav-item dropdown">
 		        <a class="nav-link dropdown-toggle" href="#" id="dropdown03" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Set Examination</a>
 			    <div class="dropdown-menu" aria-labelledby="dropdown03">
-			        <a class="dropdown-item" href="#">Add Questions</a>
+			        <a class="dropdown-item" href="addquestions.jsp">Add Questions</a>
 				<a class="dropdown-item" href="#">Update Questions</a>
                                 <a class="dropdown-item" href="#">Delete Questions</a>
 			    </div>
