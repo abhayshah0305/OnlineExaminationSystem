@@ -29,7 +29,7 @@
                         <a class="nav-link" href="checkscores.jsp">Check Marks</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Logout</a>
+                        <a class="nav-link" href="logout">Logout</a>
                     </li>
                     </ul>
                 </div>
