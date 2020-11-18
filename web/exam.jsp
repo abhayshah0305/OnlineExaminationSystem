@@ -79,25 +79,21 @@
                     <c:set var="count" value="${count+1}" scope="page" />
                     <ol id="${count}">
 
-
                         <h3><span><c:out value="${count}"></c:out>]&nbsp;</span><c:out value="${mcqexam.question}"></c:out></h3>
                         <input type="radio" name="${mcqexam.qno}" value="${mcqexam.a1}" required=""><c:out value="${mcqexam.a1}"></c:out><br>
                         <input type="radio" name="${mcqexam.qno}"value="${mcqexam.a2}"><c:out value="${mcqexam.a2}"></c:out><br>
                         <input type="radio" name="${mcqexam.qno}" value="${mcqexam.a3}"><c:out value="${mcqexam.a3}"></c:out><br>
                         <input type="radio" name="${mcqexam.qno}" value="${mcqexam.a4}"><c:out value="${mcqexam.a4}"></c:out>
 
-
-                            <br>
-
+                        <br>
                         </ol>
                         <br>
 
                 </c:forEach>
-            
+ 
             <center> 
-                <h1 id="displayinformation">Quiz Ended.<br>Press Click the Submit button.</h1>
+                <h1 id="displayinformation" style="color:red;">The Examination Has Ended</h1>
                 <button class="btn btn-success">Next Question</button>
-                 <input id="sbbtn" type="submit" value="Submit Quiz" class="btn btn-success">                 <br><br>   
             </center>
             <br><br>
         </form>
@@ -124,11 +120,6 @@
         $("#sbbtn").show();
         $("#displayinformation").show();
         }
-//$("#parentdiv").children().first().css({"color":"red","border":"2px solid black"});
-//$("div").next("div").show();
-//$save.next().show();
-        
-
 
 
 });
@@ -155,16 +146,9 @@
         $("#sbbtn").show();
         $("#displayinformation").show();
         }
-//$("#parentdiv").children().first().css({"color":"red","border":"2px solid black"});
-//$("div").next("div").show();
-//$save.next().show();
-        
-
-
 
 });
-       
-       
+    
    };
 </script>
     <script type="text/javascript">
@@ -182,7 +166,6 @@ function countDown(){
     }
 }
 countDown();
-
 
 </script>
 </html>

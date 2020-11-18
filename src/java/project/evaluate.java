@@ -57,78 +57,38 @@ public class evaluate extends HttpServlet {
             Enumeration paramNames = request.getParameterNames();
             statement = con.createStatement();
             HttpSession session = request.getSession();
-            String quiztype = (String) session.getAttribute("selectedexam");
+            String selectedexam = (String) session.getAttribute("selectedexam");
             //out.println(quiztype);
-            int displaycounter = 0;
             int scorecounter = 0;
             
            while(paramNames.hasMoreElements()){
-               displaycounter++;
+              
            String paramName = (String)paramNames.nextElement();
-           resultset = statement.executeQuery("select question,ans from "+quiztype+" where qno="+paramName+"");
+           resultset = statement.executeQuery("select question,ans from "+selectedexam+" where qno="+paramName+"");
            
            String [] paramValues = request.getParameterValues(paramName);
            
            for(String paraval:paramValues){
                
                   while (resultset.next()) // Until next row is present otherwise it return false
-            { 
-                      
-                    //we also have equals igonre case which will ignore casae sensitive data. 
-                     // out.println("param names:"+paramName+"<br>");
-                     // out.println("param values:"+paraval+"<br>");
-                    String ropt = resultset.getString("ans");
-                      String question = resultset.getString("question");
+                    { 
+                        String ropt = resultset.getString("ans");
+                        String question = resultset.getString("question");
 
                     if(paraval.equals(ropt)){
                         scorecounter++;
-                        
-                       // out.println("<h2 style='color:hotpink;'>Correct Answer</h2>");
-                        out.println("<center>\n" +
-"<div  style=\"border: solid; border-color: green;background-color:lemon;width:800px;height:auto;padding:8px;\">\n" +
-"	<h1 align=\"left\">\n" +
-"		<span>"+displaycounter+"</span> \n" +
-"		"+question+"<span style=\"float:right;\">+1</span></h1>\n" +
-"<div align=\"left\">\n" +
-"	<ul >\n" +
-"		<li>Your answer: "+paraval+"</li>\n" +
-"		<li>Correct answer: "+ropt+"</li>\n" +
-"		\n" +
-"	</ul>\n" +
-"	</div>\n" +
-"\n" +
-"	<br>\n" +
-"</div><br>\n" +
-"</center>");
-                    }else{
-                           out.println("<center>\n" +
-"<div  style=\"border: solid; border-color: red;background-color:;width:800px;height:auto;padding:8px;\">\n" +
-"	<h1 align=\"left\">\n" +
-"		<span>"+displaycounter+"</span> \n" +
-"		"+question+"<span style=\"float:right;\">0</span></h1>\n" +
-"<div align=\"left\">\n" +
-"	<ul >\n" +
-"		<li>Your answer: "+paraval+"</li>\n" +
-"		<li>Correct answer: "+ropt+"</li>\n" +
-"		\n" +
-"	</ul>\n" +
-"	</div>\n" +
-"\n" +
-"	<br>\n" +
-"</div><br>\n" +
-"</center>");
+                      
                     }
-                     
-                      
-                      
+                  
                   }
-         
+               }
            }
-           }
-           out.println("    <center><form method=\"POST\" action=\"setmarks.jsp\">\n" +
+           out.println("<h1>The Examination Has Ended</h1>");
+           out.println("<h4>Please Click on the 'Record Answers' Button below to Record them for Evaluation</h4>");
+           out.println(" <center><form method=\"POST\" action=\"setmarks.jsp\">\n" +
 "            \n" +
 "            <input type=\"hidden\" name=\"newscore\" value="+scorecounter+">\n" +
-"            <input class=\"btn btn-success\" type=\"submit\" value=\"Submit Result\">\n" +
+"            <input class=\"btn btn-success\" type=\"submit\" value=\"Record Answers\">\n" +
 "        </form>\n" +
 "    </center>");
            
