@@ -125,7 +125,7 @@ public class evaluate extends HttpServlet {
          
            }
            }
-           out.println("    <center><form method=\"POST\" action=\"updatehighscore.jsp\">\n" +
+           out.println("    <center><form method=\"POST\" action=\"setmarks.jsp\">\n" +
 "            \n" +
 "            <input type=\"hidden\" name=\"newscore\" value="+scorecounter+">\n" +
 "            <input class=\"btn btn-success\" type=\"submit\" value=\"Submit Result\">\n" +
