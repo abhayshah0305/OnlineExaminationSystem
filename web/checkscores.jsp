@@ -1,6 +1,6 @@
 <%-- 
-    Document   : viewexam
-    Created on : 18 Nov, 2020, 3:32:03 AM
+    Document   : checkscores
+    Created on : 18 Nov, 2020, 12:18:15 PM
     Author     : Abhay Shah
 --%>
 
@@ -12,7 +12,7 @@
     <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>OES | View Exam</title>
+	<title>OES | Check Marks</title>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
@@ -38,39 +38,34 @@ nav {
   margin-right: auto;
 }
 table {
-  width: 95%;
+  width: 55%;
+}
+table th,td{
+    text-align: center;
 }
     </style>
 
     </head>
     <body>
         <jsp:include page="adminnavbar.jsp" /><br/>
-        <h1 style="text-align: center;">${examsubject} Exam Set</h1><br/>
+        <h1 style="text-align: center;">Student Marks</h1><br/>
         <sql:setDataSource var="db" driver="com.mysql.jdbc.Driver" url="jdbc:mysql://localhost:3306/ejproj" user="root" password="root"/>
         <sql:query dataSource="${db}" var="res">
-            SELECT * FROM ${examsubject};
+            select * from login;
         </sql:query>
         <table border="1" class="center">
             <tr>
-                <th>Question_ID</th>
-                <th>Question Number</th>
-                <th>Question</th>
-                <th>Choice 1</th>
-                <th>Choice 2</th>
-                <th>Choice 3</th>
-                <th>Choice 4</th>
-                <th>Answer</th>
+                <th>ID</th>
+                <th>Username</th>
+                <th>Email</th>
+                <th>Marks</th>
             </tr>
             <c:forEach var="tbl" items="${res.rows}">
                 <tr>
                     <td><c:out value="${tbl.id}"/></td>
-                    <td><c:out value="${tbl.qno}"/></td>
-                    <td><c:out value="${tbl.question}"/></td>
-                    <td><c:out value="${tbl.a1}"/></td>
-                    <td><c:out value="${tbl.a2}"/></td>
-                    <td><c:out value="${tbl.a3}"/></td>
-                    <td><c:out value="${tbl.a4}"/></td>
-                    <td><c:out value="${tbl.ans}"/></td>
+                    <td><c:out value="${tbl.username}"/></td>
+                    <td><c:out value="${tbl.email}"/></td>
+                    <td><c:out value="${tbl.marks}"/></td>
                 </tr>
             </c:forEach>
         </table>

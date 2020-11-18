@@ -26,7 +26,7 @@
 			    </div>
 		    </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Check Scores</a>
+                        <a class="nav-link" href="checkscores.jsp">Check Marks</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Logout</a>
