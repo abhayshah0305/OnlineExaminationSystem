@@ -30,8 +30,8 @@
        <sql:update>
           Update login set marks='${newscore}' where email='${email}'
       </sql:update>
-          
+        <c:redirect url="examscreen.jsp"></c:redirect>    
       </c:forEach>
-      <c:redirect url="examscreen.jsp"></c:redirect>
+      
     </body>
 </html>

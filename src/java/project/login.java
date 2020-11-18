@@ -79,6 +79,9 @@ public class login extends HttpServlet {
                     rs=ps.executeQuery();
                     
                     if(rs.next()){
+                        
+                        emailid = rs.getString("email");
+                        
                         HttpSession hs = request.getSession();
                         hs.setAttribute("id", id);
                         hs.setAttribute("name", name);
