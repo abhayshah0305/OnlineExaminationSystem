@@ -42,10 +42,9 @@ nav {
             <div class="jumbotron">
               <div class="container">
                 <h1 class="display-4">Welcome Admin!</h1>
-                <p>Welcome to OES!, an online examination system for colleges and universities to conduct their exams. OES provides
-                   ease and maximum efficiency thus saving the organization's valuable time.
+                <p>Welcome to OES!, an online examination system for colleges and universities to conduct their exams.
                 </p>
-                <p>Please Select the Subject for Examination:
+                <p>Please Select the Subject which you want to add questions to:
                 </p>
                 <p>
                   <select name="examsubject">
@@ -58,7 +57,8 @@ nav {
                      String examtype = (String)request.getParameter("examsubject");
                      session.setAttribute("examsubject", examtype);
                  %>
-                 <p>Examination Subject: <b>${examsubject}</b></p>
+                 <p>Examination Subject to Edit: <b>${examsubject}</b></p>
+                 <p>Once you have selected an exam to edit click on "Set Examination" to either add questions to the examination or view the exam</p>
                 </div>
                 </div>
   
