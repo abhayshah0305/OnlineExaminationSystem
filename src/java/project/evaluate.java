@@ -131,18 +131,7 @@ public class evaluate extends HttpServlet {
 "            <input class=\"btn btn-success\" type=\"submit\" value=\"Submit Result\">\n" +
 "        </form>\n" +
 "    </center>");
-           out.println("<br><br><br><br></body><footer id=\"sticky-footer\" style=\"\n" +
-"           position:fixed;left: 0;\n" +
-"  bottom: 0;\n" +
-"  width: 100%;\n" +
-"  background-color: #212529;\n" +
-"  color: white;\n" +
-"  text-align: center;\">\n" +
-"    <div class=\"container text-center\">\n" +
-"        <h3>Copyright &copy; neeldeshmukh</h3>\n" +
-"        <br>\n" +
-"    </div>\n" +
-"  </footer>");
+           
 //System.out.println(scorecounter);
         } catch (SQLException ex) {
             Logger.getLogger(evaluate.class.getName()).log(Level.SEVERE, null, ex);
