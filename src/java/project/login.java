@@ -63,7 +63,6 @@ public class login extends HttpServlet {
             String dbpass = "root";
             String sql = "select * from login where email=? and password=?";
             
-            String id = "";
             String name = "";
             String emailid = "";
             
@@ -80,10 +79,11 @@ public class login extends HttpServlet {
                     
                     if(rs.next()){
                         
+                        name = rs.getString("username");
                         emailid = rs.getString("email");
                         
                         HttpSession hs = request.getSession();
-                        hs.setAttribute("id", id);
+                        //hs.setAttribute("id", id);
                         hs.setAttribute("name", name);
                         hs.setAttribute("email", emailid);
                         RequestDispatcher rd = request.getRequestDispatcher("examscreen.jsp");

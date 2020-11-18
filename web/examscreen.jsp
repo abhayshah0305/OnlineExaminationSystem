@@ -59,7 +59,7 @@ nav {
         <main role="main">
             <div class="jumbotron">
               <div class="container">
-                <h1 class="display-4">Welcome Student!</h1>
+                <h1 class="display-4">Welcome ${name}</h1>
                 <p>Welcome to OES!, an online examination system for colleges and universities to conduct their exams. OES provides
                    ease and maximum efficiency thus saving the organization's valuable time.
                 </p>
