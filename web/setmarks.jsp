@@ -21,12 +21,12 @@
         <sql:query var="userscore">
             select marks from login where email='${email}'  
         </sql:query>
-        <c:set var="newscore" value="${param.newscore}"/>
+        <c:set var="uscore" value="${param.uscore}"/>
       
      <c:forEach  var="user" items="${userscore.rows}">
  
       
- <c:set var="newscore" value="${newscore + user.score}"/>
+ <c:set var="newscore" value="${uscore + user.score}"/>
        <sql:update>
           Update login set marks='${newscore}' where email='${email}'
       </sql:update>

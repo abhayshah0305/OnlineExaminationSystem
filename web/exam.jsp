@@ -81,9 +81,9 @@
 
                         <h3><span><c:out value="${count}"></c:out>]&nbsp;</span><c:out value="${mcqexam.question}"></c:out></h3>
                         <input type="radio" name="${mcqexam.qno}" value="${mcqexam.a1}" required=""><c:out value="${mcqexam.a1}"></c:out><br>
-                        <input type="radio" name="${mcqexam.qno}"value="${mcqexam.a2}"><c:out value="${mcqexam.a2}"></c:out><br>
-                        <input type="radio" name="${mcqexam.qno}" value="${mcqexam.a3}"><c:out value="${mcqexam.a3}"></c:out><br>
-                        <input type="radio" name="${mcqexam.qno}" value="${mcqexam.a4}"><c:out value="${mcqexam.a4}"></c:out>
+                        <input type="radio" name="${mcqexam.qno}"value="${mcqexam.a2}" required=""><c:out value="${mcqexam.a2}"></c:out><br>
+                        <input type="radio" name="${mcqexam.qno}" value="${mcqexam.a3}" required=""><c:out value="${mcqexam.a3}"></c:out><br>
+                        <input type="radio" name="${mcqexam.qno}" value="${mcqexam.a4}" required=""><c:out value="${mcqexam.a4}"></c:out>
 
                         <br>
                         </ol>
@@ -92,8 +92,8 @@
                 </c:forEach>
  
             <center> 
-                <h1 id="displayinformation" style="color:red;">The Examination Has Ended</h1>
-                <button class="btn btn-success">Next Question</button>
+                
+                <button>Next Question</button>
             </center>
             <br><br>
         </form>
@@ -104,65 +104,42 @@
 
     <script>
     $(document).ready(function(){
-                $("#displayinformation").hide();
-                $("#sbbtn").hide();
+              
         $("ol").hide();
-        //$("div").nextAll("div").hide();
        $("#1").first().show();
-        var btncounter = 1;
+        var qcounter = 1;
     $("button").click(function(){
-        btncounter++;
+        qcounter++;
         $("ol").hide();
-        $("#"+btncounter).show()
-         var condisplay = $("ol").length + 1;
-        if(btncounter == condisplay){
-        $("button").hide();
-        $("#sbbtn").show();
-        $("#displayinformation").show();
-        }
-
-
+        $("#"+qcounter).show()   
+    });
 });
-       
-       
-   });
     
 </script>
 <script type="text/javascript">
     object.onunload = function(){
-                $("#displayinformation").hide();
-                $("#sbbtn").hide();
+               
         $("ol").hide();
-        //$("div").nextAll("div").hide();
        $("#1").first().show();
-        var btncounter = 1;
+        var qcounter = 1;
     $("button").click(function(){
-        btncounter++;
+        qcounter++;
         $("ol").hide();
-        $("#"+btncounter).show()
-         var condisplay = $("ol").length + 1;
-        if(btncounter == condisplay){
-        $("button").hide();
-        $("#sbbtn").show();
-        $("#displayinformation").show();
-        }
-
-});
-    
-   };
+        $("#"+qcounter).show()
+        });
+    };
 </script>
     <script type="text/javascript">
-var count = 360;
-var redirect = "logout";
+var count = 1000;
  
 function countDown(){
     var timer = document.getElementById("timer");
     if(count > 0){
         count--;
-        timer.innerHTML = "Time Remaining: "+count+" seconds";
+        timer.innerHTML = "Time Remaining: "+count;
         setTimeout("countDown()", 1000)
     }else{
-        window.location.href = redirect;
+        window.location.href = "logout";
     }
 }
 countDown();

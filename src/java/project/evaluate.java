@@ -40,7 +40,7 @@ public class evaluate extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        Connection con = null;
+            Connection conn = null;
             String url = "jdbc:mysql://localhost:3306/ejproj";
             String dbusername = "root";
             String dbpassword = "root";
@@ -53,13 +53,13 @@ public class evaluate extends HttpServlet {
             } catch (ClassNotFoundException ex) {
                 Logger.getLogger(login.class.getName()).log(Level.SEVERE, null, ex);
             }
-            con = DriverManager.getConnection(url, dbusername, dbpassword);
+            conn = DriverManager.getConnection(url, dbusername, dbpassword);
             Enumeration paramNames = request.getParameterNames();
-            statement = con.createStatement();
+            statement = conn.createStatement();
             HttpSession session = request.getSession();
             String selectedexam = (String) session.getAttribute("selectedexam");
             //out.println(quiztype);
-            int scorecounter = 0;
+            int marks = 0;
             
            while(paramNames.hasMoreElements()){
               
@@ -72,11 +72,11 @@ public class evaluate extends HttpServlet {
                
                   while (resultset.next()) // Until next row is present otherwise it return false
                     { 
-                        String ropt = resultset.getString("ans");
+                        String correct = resultset.getString("ans");
                         String question = resultset.getString("question");
 
-                    if(paraval.equals(ropt)){
-                        scorecounter++;
+                    if(paraval.equals(correct)){
+                        marks++;
                       
                     }
                   
@@ -87,8 +87,8 @@ public class evaluate extends HttpServlet {
            out.println("<h4>Please Click on the 'Record Answers' Button below to Record them for Evaluation</h4>");
            out.println(" <center><form method=\"POST\" action=\"setmarks.jsp\">\n" +
 "            \n" +
-"            <input type=\"hidden\" name=\"newscore\" value="+scorecounter+">\n" +
-"            <input class=\"btn btn-success\" type=\"submit\" value=\"Record Answers\">\n" +
+"            <input type=\"hidden\" name=\"uscore\" value="+marks+">\n" +
+"            <input type=\"submit\" value=\"Record Answers\">\n" +
 "        </form>\n" +
 "    </center>");
            
