@@ -19,7 +19,7 @@
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 	<script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
         <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/carousel/">
-
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
      <style>
       .bd-placeholder-img {
         font-size: 1.125rem;
@@ -45,8 +45,9 @@
     }
     </style>
 </head>
+        
     <c:set var="selectedexam" value="${param.selectedexam}" scope="session" />
-    <body  onload="rerun()">
+    <body>
          <header>
             <!--Navigation Bar-->
             <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
@@ -71,19 +72,17 @@
         <br/><br/><br/>    
         <form action="evaluate" method="POST">
             
-            <center><h3>${selectedexam} Examination</h3></center> 
-            <!--counter-->
-            <c:set var="count" value="0" scope="page" />
-
+            <center><h1>${selectedexam} Examination</h1></center> 
+            <c:set var="questioncnt" value="0" />
             <c:forEach var="mcqexam" items="${mcq.rows}" >
-                    <c:set var="count" value="${count+1}" scope="page" />
-                    <ol id="${count}">
+                    <c:set var="questioncnt" value="${questioncnt+1}" scope="page" />
+                    <ol id="${questioncnt}">
 
-                        <h3><span><c:out value="${count}"></c:out>]&nbsp;</span><c:out value="${mcqexam.question}"></c:out></h3>
-                        <input type="radio" name="${mcqexam.qno}" value="${mcqexam.a1}" required=""><c:out value="${mcqexam.a1}"></c:out><br>
-                        <input type="radio" name="${mcqexam.qno}"value="${mcqexam.a2}" required=""><c:out value="${mcqexam.a2}"></c:out><br>
-                        <input type="radio" name="${mcqexam.qno}" value="${mcqexam.a3}" required=""><c:out value="${mcqexam.a3}"></c:out><br>
-                        <input type="radio" name="${mcqexam.qno}" value="${mcqexam.a4}" required=""><c:out value="${mcqexam.a4}"></c:out>
+                        <h3><span>Q<c:out value="${questioncnt}"></c:out>.&nbsp;</span><c:out value="${mcqexam.question}"></c:out></h3>
+                        <input type="radio" name="${mcqexam.qno}" value="${mcqexam.a1}" required="">&nbsp;<c:out value="${mcqexam.a1}"></c:out><br>
+                        <input type="radio" name="${mcqexam.qno}"value="${mcqexam.a2}" required="">&nbsp;<c:out value="${mcqexam.a2}"></c:out><br>
+                        <input type="radio" name="${mcqexam.qno}" value="${mcqexam.a3}" required="">&nbsp;<c:out value="${mcqexam.a3}"></c:out><br>
+                        <input type="radio" name="${mcqexam.qno}" value="${mcqexam.a4}" required="">&nbsp;<c:out value="${mcqexam.a4}"></c:out>
 
                         <br>
                         </ol>
@@ -92,15 +91,13 @@
                 </c:forEach>
  
             <center> 
-                
-                <button>Next Question</button>
+            <button>Submit Exam</button>
             </center>
             <br><br>
         </form>
     </body>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js">
-    </script>
+   
 
     
     <script type="text/javascript">
@@ -110,7 +107,7 @@ function countDown(){
     var timer = document.getElementById("timer");
     if(count > 0){
         count--;
-        timer.innerHTML = "Time Remaining: "+count;
+        timer.innerHTML = "Examinations ends in: "+count;
         setTimeout("countDown()", 1000)
     }else{
         window.location.href = "logout";

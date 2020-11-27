@@ -35,6 +35,9 @@ nav {
 
 </head>
 <body>
+    <%
+        response.setHeader("Cache-Control", "private, no-store, no-cache, must-revalidate");
+    %>
     <form action="exam.jsp" method="POST"> 
         <header>
             <!--Navigation Bar-->
