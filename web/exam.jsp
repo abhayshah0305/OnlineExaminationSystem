@@ -102,33 +102,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js">
     </script>
 
-    <script>
-    $(document).ready(function(){
-              
-        $("ol").hide();
-       $("#1").first().show();
-        var qcounter = 1;
-    $("button").click(function(){
-        qcounter++;
-        $("ol").hide();
-        $("#"+qcounter).show()   
-    });
-});
     
-</script>
-<script type="text/javascript">
-    object.onunload = function(){
-               
-        $("ol").hide();
-       $("#1").first().show();
-        var qcounter = 1;
-    $("button").click(function(){
-        qcounter++;
-        $("ol").hide();
-        $("#"+qcounter).show()
-        });
-    };
-</script>
     <script type="text/javascript">
 var count = 1000;
  
