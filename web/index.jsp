@@ -131,9 +131,6 @@
                 If your organization faces any challenges while conducting the exams or your organization has any concerns regarding the system please contact us. 
             </p>
         </div>
-        <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3 col-xl-2">
-            <a href="{% url 'contact' %}"><button type="button" class="btn btn-outline-secondary btn-lg">Contact Us</button></a>
-        </div>
     </div>
     </div>
     <!--Build with Ease and Logos section-->

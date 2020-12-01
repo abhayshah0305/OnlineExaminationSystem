@@ -71,7 +71,6 @@
            
         <br/><br/><br/>    
         <form action="evaluate" method="POST">
-            
             <center><h1>${selectedexam} Examination</h1></center> 
             <c:set var="questioncnt" value="0" />
             <c:forEach var="mcqexam" items="${mcq.rows}" >
@@ -89,32 +88,26 @@
                         <br>
 
                 </c:forEach>
- 
             <center> 
             <button>Submit Exam</button>
             </center>
             <br><br>
         </form>
     </body>
-
-   
-
-    
     <script type="text/javascript">
-var count = 1000;
- 
-function countDown(){
-    var timer = document.getElementById("timer");
-    if(count > 0){
-        count--;
-        timer.innerHTML = "Examinations ends in: "+count;
-        setTimeout("countDown()", 1000)
-    }else{
-        window.location.href = "logout";
-    }
-}
-countDown();
+        var count = 1000;
 
-</script>
+        function countDown(){
+            var timer = document.getElementById("timer");
+            if(count > 0){
+                count--;
+                timer.innerHTML = "Examinations ends in: "+count;
+                setTimeout("countDown()", 1000)
+            }else{
+                window.location.href = "logout";
+            }
+        }
+        countDown();
+    </script>
 </html>
 

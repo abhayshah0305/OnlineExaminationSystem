@@ -83,8 +83,8 @@ public class evaluate extends HttpServlet {
                   }
                }
            }
-           out.println("<h1>The Examination Has Ended</h1>");
-           out.println("<h4>Please Click on the 'Record Answers' Button below to Record them for Evaluation</h4>");
+           out.println("<h1 style=\"text-align:center;\">The Examination Has Ended</h1>");
+           out.println("<h4 style=\"text-align:center;\">Please Click on the 'Record Answers' Button below to Record them for Evaluation</h4>");
            out.println(" <center><form method=\"POST\" action=\"setmarks.jsp\">\n" +
 "            \n" +
 "            <input type=\"hidden\" name=\"uscore\" value="+marks+">\n" +
