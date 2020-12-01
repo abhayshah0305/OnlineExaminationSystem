@@ -58,7 +58,6 @@ public class evaluate extends HttpServlet {
             statement = conn.createStatement();
             HttpSession session = request.getSession();
             String selectedexam = (String) session.getAttribute("selectedexam");
-            //out.println(quiztype);
             int marks = 0;
             
            while(paramNames.hasMoreElements()){
@@ -70,7 +69,7 @@ public class evaluate extends HttpServlet {
            
            for(String paraval:paramValues){
                
-                  while (resultset.next()) // Until next row is present otherwise it return false
+                  while (resultset.next())
                     { 
                         String correct = resultset.getString("ans");
                         String question = resultset.getString("question");
