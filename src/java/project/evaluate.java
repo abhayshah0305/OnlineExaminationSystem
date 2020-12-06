@@ -54,27 +54,27 @@ public class evaluate extends HttpServlet {
                 Logger.getLogger(login.class.getName()).log(Level.SEVERE, null, ex);
             }
             conn = DriverManager.getConnection(url, dbusername, dbpassword);
-            Enumeration paramNames = request.getParameterNames();
+            Enumeration retrieve = request.getParameterNames();
             statement = conn.createStatement();
             HttpSession session = request.getSession();
             String selectedexam = (String) session.getAttribute("selectedexam");
             int marks = 0;
             
-           while(paramNames.hasMoreElements()){
+           while(retrieve.hasMoreElements()){
               
-           String paramName = (String)paramNames.nextElement();
-           resultset = statement.executeQuery("select question,ans from "+selectedexam+" where qno="+paramName+"");
+           String var = (String)retrieve.nextElement();
+           resultset = statement.executeQuery("select question,ans from "+selectedexam+" where qno="+var+"");
            
-           String [] paramValues = request.getParameterValues(paramName);
+           String [] useranswers = request.getParameterValues(var);
            
-           for(String paraval:paramValues){
+           for(String i:useranswers){
                
                   while (resultset.next())
                     { 
-                        String correct = resultset.getString("ans");
-                        String question = resultset.getString("question");
+                        String rightans = resultset.getString("ans");
+                        
 
-                    if(paraval.equals(correct)){
+                    if(i.equals(rightans)){
                         marks++;
                       
                     }
