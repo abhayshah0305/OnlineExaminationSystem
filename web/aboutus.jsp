@@ -47,10 +47,10 @@ nav {
                 </button>
                 <div class="collapse navbar-collapse" id="navbarCollapse">
                     <ul class="navbar-nav ml-auto">
-                    <li class="nav-item active">
+                    <li class="nav-item ">
                         <a class="nav-link" href="index.jsp">Home</a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item active">
                         <a class="nav-link" href="aboutus.jsp">About</a>
                     </li>
                     <li class="nav-item dropdown">
@@ -72,9 +72,9 @@ nav {
 
   <div class="jumbotron">
     <div class="container">
-      <h1 class="display-4">About RiskAssess</h1>
+      <h1 class="display-4">About OES</h1>
       <p>Welcome to OES!, An Online Examination System for Colleges and Universities to schedule their exams.
-                If your organization faces any challenges while conducting the exams or your organization has any concerns regarding the system please contact us. 
+        If your organization faces any challenges while conducting the exams or your organization has any concerns regarding the system please contact us. 
       </p>
       <p><a class="btn btn-primary btn-lg" href="/help" role="button">Help &raquo;</a></p>
     </div>
@@ -85,13 +85,13 @@ nav {
     <div class="row">
       <div class="col-md-4">
         <h2>Admin</h2>
-        <p>RiskAssess provides instituitons with an Admin account to generate risk assessments for their patients.</p>
+        <p>OES provides institutions with an admin account to generate assessments and check student marks.</p>
         <p><a class="btn btn-secondary" href="login.jsp" role="button">Login &raquo;</a></p>
       </div>
       <div class="col-md-4">
         <h2>How does it Work?</h2>
-        <p>RiskAssess makes use of machine learning models that helps generate accurate risk assessments.</p>
-        <p><a class="btn btn-secondary" href="login.jsp" role="button">Generate Assessment &raquo;</a></p>
+        <p>OES makes use of JSP, servlets, JSTL, expression langauge and a MySQL database to provide its examination services.</p>
+        <p><a class="btn btn-secondary" href="login.jsp" role="button">Get Started &raquo;</a></p>
       </div>
       <div class="col-md-4">
         <h2>Terms & Conditions</h2>
