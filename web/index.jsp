@@ -86,7 +86,7 @@
           <div class="carousel-caption text-left">
             <h1><b>Easy to Use.</b></h1>
             <p>A Simple and Easy to use Online Examination tool for Colleges and Universities.</p>
-            <p><a class="btn btn-lg btn-primary" href="{% url 'help' %}" role="button">Sign Up</a></p>
+            <p><a class="btn btn-lg btn-primary" href="register.jsp" role="button">Sign Up</a></p>
           </div>
         </div>
       </div>
@@ -97,7 +97,7 @@
           <div class="carousel-caption">
             <h1><b>Efficient and Reliable.</b></h1>
             <p>An Efficient and a Reliable tool to conduct Online Examinations.</p>
-            <p><a class="btn btn-lg btn-primary" href="{% url 'about' %}" role="button">Learn more</a></p>
+            <p><a class="btn btn-lg btn-primary" href="about.jsp" role="button">Learn more</a></p>
           </div>
         </div>
       </div>
@@ -108,7 +108,7 @@
           <div class="carousel-caption text-right">
             <h1><b>Simple and Non-Complex.</b></h1>
             <p>A Clean and an Elegant User Interface with Minimal Complexities.</p>
-            <p><a class="btn btn-lg btn-primary" href="{% url 'login' %}" role="button">Start Exam</a></p>
+            <p><a class="btn btn-lg btn-primary" href="login.jsp" role="button">Start Exam</a></p>
           </div>
         </div>
       </div>
