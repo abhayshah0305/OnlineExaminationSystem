@@ -57,7 +57,7 @@ public class login extends HttpServlet {
             String url = "jdbc:mysql://localhost:3306/ejproj";
             String dbuser = "root";
             String dbpass = "root";
-            String sql = "select * from login where email=? and password=?";
+            String sql = "select * from login where username=? and password=?";
             
             String name = "";
             String emailid = "";
